@@ -1,0 +1,74 @@
+.start-wrapper {
+  background-image: url('/public/top/bg-bird.svg');
+  background-size: cover;
+  background-position: top center;
+}
+
+
+.clowd-wrapper {
+  padding-top: 75px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clowd-left {
+  position: relative;
+  left: -60px;
+}
+
+.clowd-right {
+  position: relative;
+  top: 30px;
+  right: -54px;
+}
+
+
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: -70px;
+}
+
+
+.tree-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -42px;
+}
+
+.tree-right {
+  margin-left: -62px;
+}
+
+.tree-left {
+  margin-right: -62px;
+}
+
+
+.start-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: -50px;
+}
+
+.start-button {
+  cursor: pointer;
+}
+
+
+.foot-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.omikuji {
+  position: relative;
+  bottom: 8px;
+  left: 20px;
+}
+
+.pipi {
+  position: relative;
+  right: 8px;
+  top: -22px;
+}

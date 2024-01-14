@@ -15,6 +15,8 @@ type OmikujiResult = typeof initOmikujiResult;
 type OmikujiContextType = {
   omikujiResult: OmikujiResult;
   setOmikujiResult: React.Dispatch<React.SetStateAction<OmikujiResult>>;
+  isStart: boolean;
+  setIsStart: React.Dispatch<React.SetStateAction<boolean>>;
   isSwing: number,
   setIsSwing: React.Dispatch<React.SetStateAction<number>>;
   isGameOver: boolean,
@@ -24,6 +26,8 @@ type OmikujiContextType = {
 const initOmikujiContext: OmikujiContextType = {
   omikujiResult: initOmikujiResult,
   setOmikujiResult: () => {},
+  isStart: false,
+  setIsStart: () => {},
   isSwing: 0,
   setIsSwing: () => {},
   isGameOver: false,
@@ -34,11 +38,15 @@ export const OmikujiContext = createContext<OmikujiContextType>(initOmikujiConte
 
 export const OmikujiProvider = ({ children }: { children: React.ReactNode }) => {
   const [omikujiResult, setOmikujiResult] = useState(initOmikujiResult);
+  const [isStart, setIsStart] = useState(false);
   const [isSwing, setIsSwing] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
   const contextValues = {
     omikujiResult,
     setOmikujiResult,
+
+    isStart,
+    setIsStart,
 
     isSwing,
     setIsSwing,
