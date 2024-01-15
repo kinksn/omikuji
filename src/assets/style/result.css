@@ -1,0 +1,11 @@
+.result-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-image {
+  width: 75.733%;
+  height: auto;
+}
