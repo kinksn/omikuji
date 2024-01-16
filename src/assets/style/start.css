@@ -29,6 +29,10 @@
   margin-top: -70px;
 }
 
+.title-image {
+  height: 45svh;
+}
+
 
 .tree-wrapper {
   display: flex;

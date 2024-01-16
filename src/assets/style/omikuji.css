@@ -14,6 +14,7 @@
   width: 230px;
   height: 362px;
   position: relative;
+  transition: transform 0.2s linear;
 }
 
 .omikuji-mask {
@@ -32,6 +33,7 @@
   position: absolute;
   top: 57px;
   left: 65px;
+  transform:translate(0, 0);
 }
 
 
@@ -63,6 +65,26 @@
   75%  { transform:translate(0, -2px) rotate(-10deg); }
   100% { transform:translate(0, 0); }
 }
+@keyframes rumble5 {
+  0%   { transform:translate(0, 0); }
+  25%  { transform:translate(0, 8px) rotate(8deg); }
+  50%  { transform:translate(0, 0, 0); }
+  75%  { transform:translate(0, -8px) rotate(-18deg); }
+  100% { transform:translate(0, 0); }
+}
+
+@keyframes fall {
+  0%   { transform:translate(0, 0); }
+  25%  { transform:translate(0, 8px); }
+  50%  { transform:translate(0, 0); }
+  75%  { transform:translate(0, -2px); }
+  100% { transform:translate(-55px, 130px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 .is-swing-1 {
   animation:rumble1 0.2s linear;
@@ -75,5 +97,26 @@
 }
 .is-swing-4 {
   animation:rumble4 0.2s linear;
+}
+.is-swing-5 {
+  animation:rumble5 0.5s linear;
+}
+.omikuji-stick-5 {
+  animation:fall 1s forwards;
+}
+
+.omikuji-blind {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #E9D98B;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.omikuji-blind.is-blind-5 {
+  animation: fadeIn 2s forwards;
+  animation-delay: 1s;
 }
 

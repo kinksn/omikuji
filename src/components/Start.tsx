@@ -84,7 +84,7 @@ export const Start = () => {
           <img src={Cloud} className="clowd-right" alt="" />
         </div>
         <div className="title-wrapper">
-          <img src={Title} alt="" />
+          <img className="title-image" src={Title} alt="" />
         </div>
         <div className="tree-wrapper">
           <img src={TreeLeft} className="tree-right" alt="" />

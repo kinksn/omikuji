@@ -3,9 +3,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.result-blind {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #E9D98B;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 1;
+  animation: fadeOut 4s forwards;
 }
 
 .result-image {
-  width: 75.733%;
-  height: auto;
+  height: 80svh;
 }

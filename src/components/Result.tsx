@@ -16,9 +16,9 @@ export const Result = () => {
   
     return 'Error';
   }
-
   return (
     <div className='result-wrapper'>
+      <div className='result-blind'></div>
       <img className='result-image' src={selectFortune(fortunes)} />
     </div>
   );
