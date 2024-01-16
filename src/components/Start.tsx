@@ -1,7 +1,9 @@
 import { useCallback, useRef } from 'react';
+import useSound from 'use-sound';
 import { isMobile } from 'react-device-detect';
 import { useOmikujiContext } from '../hook/useOmikujiContext';
 import { Omikuji } from '../components/Omikuji';
+import StartSound from '/public/sound/start.mp3';
 import '../assets/style/start.css';
 import StartButton from '/public/top/start-button.svg';
 import Title from '/public/top/title.svg';
@@ -27,6 +29,7 @@ export const Start = () => {
     setIsStart,
     setIsSwing,
   } = useOmikujiContext();
+  const [playStart] = useSound(StartSound);
   const debounceTimer = useRef<NodeJS.Timeout | null>(null);
   const deviceMotionHandler = useCallback((event: DeviceMotionEvent) => {
     // X軸とY軸の加速度
@@ -72,6 +75,7 @@ export const Start = () => {
   };
 
   const handleGameStart = () => {
+    playStart();
     if (isMobile) permissionDeviceMotionEvent();
     setIsStart(true);
   };
