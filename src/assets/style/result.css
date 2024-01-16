@@ -19,7 +19,7 @@
   z-index: 2;
   pointer-events: none;
   opacity: 1;
-  animation: fadeOut 4s forwards;
+  animation: fadeOut 3s forwards;
 }
 
 .result-image {

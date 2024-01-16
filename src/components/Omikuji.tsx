@@ -1,4 +1,7 @@
 import { useEffect } from 'react';
+// @ts-expect-error because the useSound library doesn't have TypeScript support
+import useSound from 'use-sound';
+import KarakaraSound from '/public/sound/karakara.mp3';
 import { isMobile, isDesktop } from 'react-device-detect';
 import { useOmikujiContext } from '../hook/useOmikujiContext';
 import OmikujiMask from '/public/omikuji/tsutsu-mask.svg';
@@ -11,6 +14,7 @@ type PorpsType = {
 }
 
 export const Omikuji: React.FC<PorpsType> = ({ deviceMotionHandler = () => {} }) => {
+  const [play] = useSound(KarakaraSound);
   const {
     isSwing,
     isGameOver,
@@ -23,7 +27,7 @@ export const Omikuji: React.FC<PorpsType> = ({ deviceMotionHandler = () => {} })
   }
 
   useEffect(() => {
-    if(isSwing === 5) {
+    if(isSwing === 3) {
       const timer = setTimeout(() => {
         setIsGameOver(true);
       }, 4000);
@@ -31,6 +35,12 @@ export const Omikuji: React.FC<PorpsType> = ({ deviceMotionHandler = () => {} })
       return () => clearTimeout(timer);
     }
   }, [isSwing, setIsGameOver, deviceMotionHandler]);
+
+  useEffect(() => {
+    if(isSwing === 1 || isSwing === 2 || isSwing === 3) {
+      play();
+    }
+  }, [isSwing, play]);
 
   if (!isGameOver) {
     return (

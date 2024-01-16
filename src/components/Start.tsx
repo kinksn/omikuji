@@ -1,4 +1,5 @@
 import { useCallback, useRef } from 'react';
+// @ts-expect-error because the useSound library doesn't have TypeScript support
 import useSound from 'use-sound';
 import { isMobile } from 'react-device-detect';
 import { useOmikujiContext } from '../hook/useOmikujiContext';

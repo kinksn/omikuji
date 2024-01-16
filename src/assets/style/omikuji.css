@@ -53,25 +53,12 @@
 }
 @keyframes rumble3 {
   0%   { transform:translate(0, 0); }
-  25%  { transform:translate(0, 2px) rotate(8deg); }
-  50%  { transform:translate(0, 0, 0); }
-  75%  { transform:translate(0, -2px) rotate(-3deg); }
-  100% { transform:translate(0, 0); }
-}
-@keyframes rumble4 {
-  0%   { transform:translate(0, 0); }
-  25%  { transform:translate(0, 2px) rotate(2deg); }
-  50%  { transform:translate(0, 0, 0); }
-  75%  { transform:translate(0, -2px) rotate(-10deg); }
-  100% { transform:translate(0, 0); }
-}
-@keyframes rumble5 {
-  0%   { transform:translate(0, 0); }
   25%  { transform:translate(0, 8px) rotate(8deg); }
   50%  { transform:translate(0, 0, 0); }
   75%  { transform:translate(0, -8px) rotate(-18deg); }
   100% { transform:translate(0, 0); }
 }
+
 
 @keyframes fall {
   0%   { transform:translate(0, 0); }
@@ -95,13 +82,8 @@
 .is-swing-3 {
   animation:rumble3 0.2s linear;
 }
-.is-swing-4 {
-  animation:rumble4 0.2s linear;
-}
-.is-swing-5 {
-  animation:rumble5 0.5s linear;
-}
-.omikuji-stick-5 {
+
+.omikuji-stick-3 {
   animation:fall 1s forwards;
 }
 
@@ -115,7 +97,7 @@
   opacity: 0;
 }
 
-.omikuji-blind.is-blind-5 {
+.omikuji-blind.is-blind-3 {
   animation: fadeIn 2s forwards;
   animation-delay: 1s;
 }
