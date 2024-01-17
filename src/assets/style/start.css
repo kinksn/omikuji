@@ -1,5 +1,6 @@
 .start-wrapper {
   background-image: url('/public/top/bg-bird.svg');
+  height: 100svh;
   background-size: cover;
   background-position: top center;
 }
