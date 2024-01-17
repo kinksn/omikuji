@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 // @ts-expect-error because the useSound library doesn't have TypeScript support
 import useSound from 'use-sound';
 import KarakaraSound from '/public/sound/karakara.mp3';
-import { isMobile, isDesktop } from 'react-device-detect';
+import { isDesktop } from 'react-device-detect';
 import { useOmikujiContext } from '../hook/useOmikujiContext';
 import OmikujiMask from '/public/omikuji/tsutsu-mask.svg';
 import OmikujiBox from '/public/omikuji/tsutsu.svg';
@@ -53,12 +53,6 @@ export const Omikuji: React.FC<PorpsType> = ({ deviceMotionHandler = () => {} })
             <img className='omikuji-mask' src={OmikujiMask} alt="" />
           </div>
         </div>
-        
-        {isMobile && (
-          <>
-            {isSwing}
-          </>
-        )}
       </div>
     );
   }
