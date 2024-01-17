@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Start } from './components/Start';
 import { Result } from './components/Result';
 import { fortunes, Fortune } from './assets/data/fortune';
@@ -20,12 +21,16 @@ const selectFortune = (fortunes: Fortune[]): string => {
 
 function App() {
   const { isGameOver } = useOmikujiContext();
+  const resultFortune = useRef('');
+  useEffect(() => {
+    resultFortune.current = selectFortune(fortunes);
+  }, [isGameOver])
   return (
     <div className='wrapper'>
       <div className='obi-top'></div>
       <div className='obi-bottom'></div>
       <Start />
-      {isGameOver && <Result fortuneResult={selectFortune(fortunes)} />}
+      {isGameOver && <Result fortuneResult={resultFortune.current} />}
     </div>
   );
 }
