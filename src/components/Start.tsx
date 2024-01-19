@@ -32,6 +32,7 @@ export const Start = () => {
     setIsStart,
     setIsSwing,
   } = useOmikujiContext();
+  // const { contextSafe } = useGSAP();
   const [playStart] = useSound(StartSound);
   const debounceTimer = useRef<NodeJS.Timeout | null>(null);
   const deviceMotionHandler = useCallback((event: DeviceMotionEvent) => {
@@ -82,6 +83,32 @@ export const Start = () => {
     if (isMobile) permissionDeviceMotionEvent();
     setIsStart(true);
   };
+
+  const footWrapper = useRef();
+  useGSAP(() => {
+    const tl = gsap.timeline({ scope: footWrapper });
+  
+    tl.to('.pipi', {
+      y: 12,
+      rotate: 2,
+      duration: 0.2,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut"
+    });
+  
+    tl.to('.omikuji', {
+      y: 4,
+      x: 2,
+      z: 2,
+      rotation: 4,
+      duration: 0.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "elastic.out(1,0.3)"
+    });
+  
+  }, [isStart]);
 
   if (!isStart) {
     return (
