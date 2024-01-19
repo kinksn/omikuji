@@ -3,6 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 4vh;
   position: relative;
 }
 
@@ -23,5 +25,5 @@
 }
 
 .result-image {
-  height: 80svh;
+  height: 72svh;
 }

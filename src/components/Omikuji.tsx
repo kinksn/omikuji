@@ -7,6 +7,7 @@ import { useOmikujiContext } from '../hook/useOmikujiContext';
 import OmikujiMask from '/public/omikuji/tsutsu-mask.svg';
 import OmikujiBox from '/public/omikuji/tsutsu.svg';
 import Stick from '/public/omikuji/stick.svg';
+import TextSPShake from '/public/omikuji/sp-shake-text.svg';
 import '../assets/style/omikuji.css';
 
 type PorpsType = {
@@ -47,6 +48,7 @@ export const Omikuji: React.FC<PorpsType> = ({ deviceMotionHandler = () => {} })
       <div className='omikuji-wrapper'>
         <div className={`omikuji-blind is-blind-${isSwing}`}></div>
         <div className="omikuji-container">
+          <img src={TextSPShake} alt="" className="omikuji-text" />
           <div onClick={handlePcSubmit} className={`omikuji-box-container is-swing-${isSwing}`}>
             <img className='omikuji-box' src={OmikujiBox} alt="" />
             <img className={`omikuji-stick omikuji-stick-${isSwing}`} src={Stick} alt="" />

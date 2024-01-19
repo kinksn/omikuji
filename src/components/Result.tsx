@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useOmikujiContext } from '../hook/useOmikujiContext';
 // @ts-expect-error because the useSound library doesn't have TypeScript support
 import useSound from 'use-sound';
+import RestartButton from '/public/result/restart-button.svg';
 import ResultSound from '/public/sound/result.mp3';
 import '../assets/style/result.css';
 
@@ -30,9 +31,11 @@ export const Result: React.FC<PropsType> = ({ fortuneResult }) => {
       <div className='result-blind'></div>
       <img
         className='result-image'
-        onClick={handleReset}
         src={fortuneResult}
       />
+      <div className='result-button-container'>
+        <img src={RestartButton} onClick={handleReset} alt="" className="result-restart-button" />
+      </div>
     </div>
   );
 }
